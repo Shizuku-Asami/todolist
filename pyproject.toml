@@ -2,8 +2,9 @@
 name = "todo_list"
 version = "0.1.0"
 description = "A todo list using Django Rest Framework."
-authors = ["Shizuku Asami"]
-license = "CC0"
+authors = ["Shizuku Asami <xv.chronos@gmail.com>"]
+license = "MIT"
+repository = "https://github.com/Shizuku-Asami/todolist"
 
 [tool.poetry.dependencies]
 python = "^3.9"
