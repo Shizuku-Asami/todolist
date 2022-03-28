@@ -28,23 +28,23 @@ DATABASE_URL=sqlite://todolist.sqlite3
 ```
 Run the command
 ```bash
-$ poetry install
+(venv) $ poetry install
 ```
 to install the dependencies.
 
 Make sure that you create a database for the project and then run the command
 ```bash
-$ python manage.py migrate
+(venv) $ python manage.py migrate
 ```
 to create database tables.
 
 If you want to run the server in development mode use the command:
 ```bash
-$ python manage.py runserver --settings=todolist.settings.development
+(venv) $ python manage.py runserver --settings=todolist.settings.development
 ```
 Or you can run the server in production mode using:
 ```bash
-$ python manage.py runserver --settings=todolist.settings.production
+(venv) $ python manage.py runserver --settings=todolist.settings.production
 ```
 ## Install using Docker image
 Coming soon.
