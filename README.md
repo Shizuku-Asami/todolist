@@ -48,3 +48,10 @@ Or you can run the server in production mode using:
 ```
 ## Install using Docker image
 Coming soon.
+
+## Running tests
+This project uses pytest for testing. To run all the tests:
+```bash
+(venv) $ pytest -v
+```
+If all the tests pass then you're good to go.
