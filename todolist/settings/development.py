@@ -2,4 +2,4 @@ from .base import *
 
 DEBUG = True
 
-ALLOWED_HOSTS = ["testserver"]
+ALLOWED_HOSTS = ["testserver", "localhost"]
