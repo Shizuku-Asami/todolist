@@ -65,7 +65,7 @@ def test_user_model_number_of_fields(user):
 @pytest.mark.django_db
 def test_user_model_field_names(user):
     user_fields = [field.name for field in User._meta.fields]
-    assert user_fields == [
+    assert set(user_fields) == set([
         "id",
         "password",
         "last_login",
@@ -74,4 +74,4 @@ def test_user_model_field_names(user):
         "is_active",
         "is_admin",
         "is_staff",
-    ]
+    ])

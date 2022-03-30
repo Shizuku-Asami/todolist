@@ -24,7 +24,6 @@ class RegistrationSerializer(serializers.Serializer):
         model = User
 
     def create(self, data):
-        print(data)
         return User.objects.create_user(**data)
 
 
