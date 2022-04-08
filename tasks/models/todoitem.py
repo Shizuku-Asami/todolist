@@ -4,7 +4,7 @@ from .todolist import TodoList
 
 
 class TodoItem(models.Model):
-    todolist = models.ForeignKey(TodoList, on_delete=models.CASCADE)
+    todolist = models.ForeignKey(TodoList, on_delete=models.CASCADE, related_name="todoitem_todolist")
     name = models.CharField(max_length=254)
     description = models.TextField(default="")
     is_done = models.BooleanField(default=False)
