@@ -6,7 +6,7 @@ from .models import User
 from .serializers import LoginSerializer ,RegistrationSerializer
 
 
-class UserCreateAPIView(views.APIView):
+class UserCreateAPIView(generics.GenericAPIView):
     serializer_class = RegistrationSerializer
 
     def post(self, request):
@@ -18,7 +18,7 @@ class UserCreateAPIView(views.APIView):
         return Response(data=user_data, status=status.HTTP_201_CREATED)
 
 
-class UserLoginAPIView(views.APIView):
+class UserLoginAPIView(generics.GenericAPIView):
     serializer_class = LoginSerializer
 
     def post(self, request):
