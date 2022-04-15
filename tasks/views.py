@@ -27,14 +27,15 @@ class TodoListViewSet(viewsets.ModelViewSet):
         ### BEGIN ###
         if "todoitem_todolist" in data.keys():
             for element in dict(data)["todoitem_todolist"]:
-                element = element.replace("'", '"')
-                if '"is_done": False' in element:
-                    element = element.replace('"is_done": False', '"is_done": false')
-                if '"is_done": True' in element:
-                    element = element.replace('"is_done": True', '"is_done": true')
-                element = json.loads(element)
+                if isinstance(element, str):
+                    element = element.replace("'", '"')
+                    if '"is_done": False' in element:
+                        element = element.replace('"is_done": False', '"is_done": false')
+                    if '"is_done": True' in element:
+                        element = element.replace('"is_done": True', '"is_done": true')
+                    element = json.loads(element)
                 element["todolist"] = serializer.data["id"]
-                query_element = QueryDict('', mutable=True)
+                query_element = QueryDict("", mutable=True)
                 query_element.update(element)
                 todoitem_serializer = TodoItemSerializer(data=query_element)
                 todoitem_serializer.is_valid(raise_exception=True)
